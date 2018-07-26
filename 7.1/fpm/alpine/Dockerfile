@@ -49,6 +49,7 @@ RUN set -xe \
 RUN set -xe \
     && apk add --no-cache libmemcached-dev zlib-dev cyrus-sasl-dev autoconf g++ make \
     && pecl install memcached \
+    && docker-php-ext-enable memcached \
     && apk del --no-cache zlib-dev cyrus-sasl-dev make autoconf g++
 
 # Install Imagick
